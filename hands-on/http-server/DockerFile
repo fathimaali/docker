@@ -1,0 +1,17 @@
+FROM python:latest
+
+LABEL maintainer="fathima_sample_email@gmail.com" 
+
+WORKDIR /home
+
+COPY requirements.txt /app/
+
+RUN pip install --no-cache-dir -r /app/requirements.txt 
+
+COPY twitterServer.py .
+
+EXPOSE 8000
+
+ENV FLASK_APP=twitterServer.py
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8000"]

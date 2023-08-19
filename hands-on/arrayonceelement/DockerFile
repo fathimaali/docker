@@ -1,0 +1,11 @@
+FROM python:latest
+
+LABEL maintainer="fathima_sample_email@gmail.com" 
+
+WORKDIR /home
+
+COPY arrayElementOnce.py .
+
+EXPOSE 80
+
+CMD ["python","arrayElementOnce.py"]
